@@ -1,0 +1,348 @@
+{
+  "summary": {
+    "title": "Modelo de Risco do protótipo concebido pelo prof. Raul Morais",
+    "owner": "Rafael Abreu",
+    "description": "Segue-se aqui um diagrama de fluxo de dados relativamente ao protótipo referido pelo professor Raúl Morais a ser utilizado numa smart farm localizada em ___________"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "Data Flow Diagram",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0,
+        "$$hashKey": "object:14",
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 330,
+                "y": 254
+              },
+              "angle": 0,
+              "id": "ce20303f-bb66-4e09-8d00-1254b86a0365",
+              "z": 1,
+              "hasOpenThreats": false,
+              "description": "Predefinida como um Raspberry Pi, mas provavelmente irá ser utilizado um Orange Pi.\nA sua função é de receber os dados dos diversos sensores (IEEE 802.15.4) e transmiti-los para uma Cloud através de GPRS (2G)",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Gateway"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 299,
+                "y": 3
+              },
+              "angle": 0,
+              "id": "67d7893a-1fa9-4031-8d9f-674739138ac3",
+              "z": 2,
+              "hasOpenThreats": false,
+              "description": "Um serviço prestado por terceiros com opção de análise de dados através de uma IA.",
+              "outOfScope": true,
+              "reasonOutOfScope": "É um serviço prestado por uma entidade exterior à rede. É da inteira responsabilidade desta organização de fazer o tratamento seguro da informação",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
+                },
+                "text": {
+                  "text": "Cloud (MySense)"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "ce20303f-bb66-4e09-8d00-1254b86a0365"
+              },
+              "target": {
+                "id": "67d7893a-1fa9-4031-8d9f-674739138ac3"
+              },
+              "vertices": [
+                {
+                  "x": 294,
+                  "y": 175
+                }
+              ],
+              "id": "229db14c-5f21-43b7-a744-38e2c8a5b7a3",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "GPRS",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 3,
+              "hasOpenThreats": false,
+              "protocol": "GPRS",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "ce20303f-bb66-4e09-8d00-1254b86a0365"
+              },
+              "target": {
+                "id": "67d7893a-1fa9-4031-8d9f-674739138ac3"
+              },
+              "vertices": [
+                {
+                  "x": 471,
+                  "y": 173
+                }
+              ],
+              "id": "f3c55a82-f666-49c5-a8e6-3542ddb19d63",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "HTTP",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 4,
+              "hasOpenThreats": false,
+              "protocol": "HTTP",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 143,
+                "y": 438
+              },
+              "angle": 0,
+              "id": "6014804c-6a13-47d5-add0-d569c16d5869",
+              "z": 5,
+              "hasOpenThreats": false,
+              "description": "Trata-se de um sensor PIC (Peripheral Interface Controller). Este sensor encontra-se protegido contra leitura. este sensor comunica com a Gateway através de Zigbee.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Sensor 1"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 485,
+                "y": 431
+              },
+              "angle": 0,
+              "id": "811250a8-3caf-4315-80b2-be927d8f8c2f",
+              "z": 6,
+              "hasOpenThreats": false,
+              "description": "Trata-se de um sensor PIC (Peripheral Interface Controller). Este sensor encontra-se protegido contra leitura.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Sensor 2"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "811250a8-3caf-4315-80b2-be927d8f8c2f"
+              },
+              "target": {
+                "id": "ce20303f-bb66-4e09-8d00-1254b86a0365"
+              },
+              "vertices": [],
+              "id": "49752b67-93b3-448d-9993-5a8c4724a614",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "flow 6",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 7,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "6014804c-6a13-47d5-add0-d569c16d5869"
+              },
+              "target": {
+                "id": "ce20303f-bb66-4e09-8d00-1254b86a0365"
+              },
+              "vertices": [],
+              "id": "da01d9a1-7bca-4f21-9ac4-a5a47d0ab779",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "ZigBee",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 8,
+              "hasOpenThreats": true,
+              "description": "O primeiro sensor comunica com a GW através de ZigBee",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "title": "Mensagens modificadas",
+                  "description": "Existe o risco das mensagens serem lidas por um terceiro elemento exterior à rede (MitM) surgindo o problema da falta de confidencialidade dentro da rede. Os dados expostos podem modificadas de forma a que a Gateway impeça que os atuadores executem se forem necessários.",
+                  "mitigation": "Implementar um mecanismo de Integridade de Mensagens. P.ex. utilizar uma chave de encriptação AES - Link Key. Assim, qualquer modificação dos dados resultará num erro de desencriptação indicando dados corrompidos.",
+                  "$$hashKey": "object:48"
+                },
+                {
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "title": "Potencial ataque de repetição (Replay attack)",
+                  "description": "Há um grande risco de existir um replay attack- ataque onde são utilizados dados antigos já enviados para a Gateway de forma a fazerem-na entrar num loop de dados.",
+                  "mitigation": "Implementação de um Frame Check Sequence - Flag que incrementa o seu valor à medida que passa o número de mensagens transmitidas.\nComo o FCS já vem ativado por predefinição, esta ameaça foi marcada como \"Mitigada\". No entanto, um atacante pode enviar uma mensagem com esta Flag no seu valor máximo, fazendo com que a gateway rejeite todas as mensagens que forem encaminhadas posteriormente. Este controlo faz com que se levante um risco de \"Denial of Service\".",
+                  "$$hashKey": "object:74"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Denial of service",
+                  "title": "Disponibilidade dos equipamentos comprometida com uso de FCS",
+                  "description": "No caso de se utilizar um FCS - Flag incremental que classifica as mensagens por ordem de chegada, rejeitando-se as mensagens com a flag menor do que a última mensagem enviada - expõe-se a rede ao risco de\"Denial of service\" caso um atacante transmita uma mensagem com o FCS com o seu máximo valor (as mensagens posteriores são todas rejeitadas).",
+                  "mitigation": "Utilização de um Nonce - Número aleatório gerado uma única vez - em vez da utilização de um valor incremental. Isto permite identificar uma mensagem, evitando-se na mesma um ataque de replay.",
+                  "$$hashKey": "object:84"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Repudiation",
+                  "title": "Negação de uma atividade por parte de um dispositivo",
+                  "description": "Um dispositivo que comunique à gateway que não executou uma ação pode iniciar um processo de disrupção das colheitas, não sendo possível destacar o node que ordenou uma ação de um atuador",
+                  "mitigation": "Utiizar um processo de gravação de eventos - Logging, que guarde na gateway que dispositivos estão a controlar o quê e que dispositivos \"pediram\" à GW para executar uma ação de um atuador.",
+                  "$$hashKey": "object:90"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Risco de personificação (roubo de identidade) de um node legítimo",
+                  "type": "Spoofing",
+                  "description": "Existe o risco de um atacante ligar-se à rede e intercetar mensagens trocadas dentro desta mesma. A consequência é que se torna difícil de detetar um node não legítimo, podendo este ficar na rede por um longo período de tempo indetetável.",
+                  "mitigation": "Utilização de um Trust Center (TC) capaz de emparelhar e reconhecer os dispositivos como sendo fidedignos.",
+                  "$$hashKey": "object:100"
+                }
+              ],
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "height": 590,
+          "width": 790
+        }
+      }
+    ]
+  }
+}
